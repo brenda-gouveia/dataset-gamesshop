@@ -1,0 +1,79 @@
+# Análise de Dados para Otimização da Distribuição e Logística - Meganium Games
+
+## **Introdução**
+Antes de começar a análise em si, utilizei o ChatGPT para me ajudar no contexto geral e me dar um caminho para seguir.
+
+- O modelo me deu algumas idéias de Pré-processamento, que posso fazer para conseguir ainda mais informação e eficiência da tabela.
+- Análise de Vendas e Demanda, sugerindo sazonalidade e impacto de descontos
+- Análise Geográfica, uma análise de quais regiões exigem maior e menor demanda e o valor dos consoles baseado em cada país e na sua moeda
+- Perfil dos Compradores, além de ver a média de idade dos compradores também uma correlação entre os modelos de consoles
+- Otimização da Distribuição, opções que podem ajudar a alavancar as vendas
+
+## **Contexto**
+A empresa **Meganium Games** fabrica consoles de video-game, focando apenas na fabricação e deixando a distribuição e venda para terceiros. Os produtos são vendidos globalmente.
+
+A empresa possui um arquivo `.csv` com informações sobre distribuição e venda, contendo os seguintes campos:
+
+- `SKU` – Identificação do modelo do console
+- `product_sold` – Produto vendido
+- `date_sold` – Data da venda
+- `quantity` – Quantidade vendida
+- `unit_price` – Preço unitário
+- `total_price` – Preço total da venda
+- `currency` – Moeda da transação
+- `site` – Plataforma onde a venda foi realizada
+- `discount_coupon` – Código do cupom de desconto (se houver)
+- `discount_value` – Valor do desconto aplicado
+- `buyer_birth_date` – Data de nascimento do comprador
+- `buyer_name` – Nome do comprador
+- `delivery_country` – País de entrega
+
+Com base nesses dados, podemos realizar uma análise para transformá-los em informações relevantes e otimizar a distribuição e logística até o momento da venda.
+
+---
+
+## **1. Pré-processamento dos Dados**
+Antes de realizar a análise, é necessário tratar os dados para garantir qualidade e consistência:
+
+- **Remover duplicatas e valores ausentes** para evitar distorções.
+- **Padronizar moedas** (`currency`) convertendo para uma moeda de referência.
+- **Converter tipos de dados**:
+  - `date_sold` para formato de data para facilitar análise temporal.
+  - `buyer_birth_date` para calcular a idade do comprador.
+
+---
+
+## **2. Análise de Vendas e Demanda**
+Podemos identificar padrões de demanda para melhorar a fabricação e distribuição:
+
+- **Identificar os consoles mais vendidos** (`SKU`, `quantity`, `total_price`).
+- **Analisar sazonalidade** (`date_sold`) para prever períodos de alta e baixa demanda.
+- **Avaliar impacto de descontos** (`discount_coupon`, `discount_value`) no volume de vendas.
+
+---
+
+## **3. Análise Geográfica**
+Para otimizar a distribuição, podemos entender a demanda por região:
+
+- **Avaliar os países que mais compram** (`delivery_country`).
+- **Correlacionar regiões com demanda crescente/decrescente** para ajustar estoques.
+- **Identificar variações de preço e descontos por país**.
+
+---
+
+## **4. Perfil dos Compradores**
+Podemos entender melhor o público-alvo da empresa:
+
+- **Distribuir compradores por faixa etária** (convertendo `buyer_birth_date` para idade).
+- **Verificar correlação entre idade e tipo de console comprado**.
+- **Analisar tendências de compra por local de venda** (`site`).
+
+---
+
+## **5. Otimização da Distribuição**
+A partir das análises acima, podemos tomar ações para otimizar a distribuição e logística:
+
+- **Ajustar estoques regionais** de acordo com a demanda por país.
+- **Reduzir tempo de entrega** alocando produtos próximos aos principais mercados.
+- **Aprimorar estratégias promocionais** baseadas na resposta dos consumidores aos descontos.
+- **Negociar contratos logísticos melhores** para regiões com alta demanda.
